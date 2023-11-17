@@ -1,5 +1,5 @@
 {% set name = "nengo-ocl" %}
-{% set version = "2.1.0" %}
+{% set version = "3.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nengo-ocl-{{ version }}.tar.gz
-  sha256: 56f6b5c1dd1ec34b99012d1ab9647507a3ac6ba825b3f6b4052f1e3a9d6c0fdf
+  sha256: 813874f7ae5b54dd168f9370ac448d8b4407bf186e5c9d1a4c3d19569eb86ed0
 
 build:
   number: 0
