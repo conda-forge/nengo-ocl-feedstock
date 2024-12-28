@@ -7,23 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nengo-ocl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nengo-ocl-{{ version }}.tar.gz
   sha256: 813874f7ae5b54dd168f9370ac448d8b4407bf186e5c9d1a4c3d19569eb86ed0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - setuptools
+    - python {{ python_min }}
   run:
     - mako
     - nengo >=3.1.0
     - pyopencl
-    - python >=3.6
+    - python >={{ python_min }}
     - platformdirs
 
 test:
@@ -34,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://labs.nengo.ai/nengo-ocl/
